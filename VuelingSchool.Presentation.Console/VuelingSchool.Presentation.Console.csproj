@@ -49,5 +49,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VuelingSchool.Common.Library\VuelingSchool.Common.Library.csproj">
+      <Project>{9a161e31-bba2-43e5-9d74-dc79faff9a1d}</Project>
+      <Name>VuelingSchool.Common.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VuelingSchool.DataAccess.Repository\VuelingSchool.DataAccess.Repository.csproj">
+      <Project>{ac098ee2-18dc-4657-8b19-14fb6aab7f1e}</Project>
+      <Name>VuelingSchool.DataAccess.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

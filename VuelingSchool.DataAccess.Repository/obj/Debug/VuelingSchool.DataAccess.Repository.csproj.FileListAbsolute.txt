@@ -1,0 +1,9 @@
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.DataAccess.Repository\bin\Debug\VuelingSchool.DataAccess.Repository.dll
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.DataAccess.Repository\bin\Debug\VuelingSchool.DataAccess.Repository.pdb
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.DataAccess.Repository\obj\Debug\VuelingSchool.DataAccess.Repository.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.DataAccess.Repository\obj\Debug\VuelingSchool.DataAccess.Repository.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.DataAccess.Repository\obj\Debug\VuelingSchool.DataAccess.Repository.dll
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.DataAccess.Repository\obj\Debug\VuelingSchool.DataAccess.Repository.pdb
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.DataAccess.Repository\bin\Debug\VuelingSchool.Common.Library.dll
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.DataAccess.Repository\bin\Debug\VuelingSchool.Common.Library.pdb
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.DataAccess.Repository\obj\Debug\VuelingSchool.DataAccess.Repository.csproj.CopyComplete

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace VuelingSchool.DataAccess.Repository
 {
-    public class Class1
+    public interface IStudentRepository
     {
+         void WriteFile(int studentId, string name, string surname, string birthday);
+
+        void PrintMenu();
+
+
     }
 }
