@@ -12,9 +12,13 @@ namespace VuelingSchool.Common.Library.Utils
     {
         private readonly string Path = "Student.txt";
 
-        public void SaveTxt(String content)
+        public void SaveTxt(string content)
         {
-            File.WriteAllText(Path, content);
+            //File.WriteAllText(Path, content);
+            File.AppendAllText(Path, content);
+
         }
+
+
     }
 }
