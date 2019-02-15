@@ -1,12 +1,12 @@
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\bin\Debug\VuelingSchool.Presentation.Console.exe.config
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\bin\Debug\VuelingSchool.Presentation.Console.exe
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\bin\Debug\VuelingSchool.Presentation.Console.pdb
-C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\obj\Debug\VuelingSchool.Presentation.Console.csprojAssemblyReference.cache
-C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\obj\Debug\VuelingSchool.Presentation.Console.csproj.CoreCompileInputs.cache
-C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\obj\Debug\VuelingSchool.Presentation.Console.exe
-C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\obj\Debug\VuelingSchool.Presentation.Console.pdb
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\bin\Debug\VuelingSchool.Common.Library.dll
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\bin\Debug\VuelingSchool.DataAccess.Repository.dll
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\bin\Debug\VuelingSchool.Common.Library.pdb
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\bin\Debug\VuelingSchool.DataAccess.Repository.pdb
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\obj\Debug\VuelingSchool.Presentation.Console.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\obj\Debug\VuelingSchool.Presentation.Console.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\obj\Debug\VuelingSchool.Presentation.Console.csproj.CopyComplete
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\obj\Debug\VuelingSchool.Presentation.Console.exe
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Presentation.Console\obj\Debug\VuelingSchool.Presentation.Console.pdb

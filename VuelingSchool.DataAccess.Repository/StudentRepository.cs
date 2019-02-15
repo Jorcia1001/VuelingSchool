@@ -12,69 +12,25 @@ namespace VuelingSchool.DataAccess.Repository
 {
     public class StudentRepository : IStudentRepository
     {
-        private string studenIdRepository;
-        private string nameRepository;
-        private string surnameRepository;
-        private string birthdayRepository;
-        private Guid guidIdRepository;
-        private Student student;
-        private Filemanager filemanager;
 
-
-        public StudentRepository()
+        public Student AddStudent(Student s)
         {
-            student = new Student();
-            filemanager = new Filemanager();
-        }
-
-        public string StudenIdRepository { get => studenIdRepository; set => studenIdRepository = value; }
-        public string NameRepository { get => nameRepository; set => nameRepository = value; }
-        public string SurnameRepository { get => surnameRepository; set => surnameRepository = value; }
-        public string BirthdayRepository { get => birthdayRepository; set => birthdayRepository = value; }
-        public Guid GuidIdRepository { get => guidIdRepository; set => guidIdRepository = value; }
-        public Student Student { get => student; set => student = value; }
-        public Filemanager Filemanager { get => filemanager; set => filemanager = value; }
-
-        public void AddStudent(Student s, Filemanager f)
-        {   
-            s.GuidId = GuidIdRepository;
-            s.StudenId = StudenIdRepository;
-            s.Name = NameRepository;
-            s.Surname = surnameRepository;
-            s.Birthday = BirthdayRepository;
-
             try
             {
-                f.SaveTxt(s.ToString());
+                Student student = s;
+                student.guidId = Guid.NewGuid();
+                student.guidId = s.guidId;
+                student.studenId = s.studenId;
+                student.name = s.name;
+                student.surname = s.surname;
+                student.birthday = s.birthday;
+                return student;
             }
-            catch(FileNotFoundException e)
+            catch(Exception e)
             {
-                System.Console.WriteLine(e.Message);
+                System.Diagnostics.Debug.WriteLine(e.Message);
                 throw;
             }
-           
-
-        }
-
-       
-        public void ReadDataStudent(Guid guidId, string studenId, string name, string surname, string birthday)
-        {
-            GuidIdRepository = guidId;
-            StudenIdRepository = studenId;
-            NameRepository = name;
-            SurnameRepository = surname;
-            BirthdayRepository = birthday;
-
-        }
-
-        public void ResetDataStudent()
-        {
-            GuidIdRepository = Guid.Empty;
-            StudenIdRepository = null;
-            NameRepository = null;
-            SurnameRepository = null;
-            BirthdayRepository = null;
-            
         }
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C79AFD2F-C02F-4548-93CC-71308CB3236A}</ProjectGuid>
+    <ProjectGuid>{3B0CCFE2-947D-445F-A5B7-C0A2500CFE1E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VuelingSchool.DataAccess.RepositoryTests</RootNamespace>
@@ -63,6 +63,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VuelingSchool.Common.Library\VuelingSchool.Common.Library.csproj">
+      <Project>{9A161E31-BBA2-43E5-9D74-DC79FAFF9A1D}</Project>
+      <Name>VuelingSchool.Common.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VuelingSchool.DataAccess.Repository\VuelingSchool.DataAccess.Repository.csproj">
       <Project>{AC098EE2-18DC-4657-8B19-14FB6AAB7F1E}</Project>
       <Name>VuelingSchool.DataAccess.Repository</Name>
