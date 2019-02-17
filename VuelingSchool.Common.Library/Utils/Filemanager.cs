@@ -1,53 +1,134 @@
 ﻿using System;
 using System.IO;
-using System.Data;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using VuelingSchool.Common.Library.Models;
 
 namespace VuelingSchool.Common.Library.Utils
 {
     public class Filemanager
     {
-        private readonly string Path = "Student.txt";
-        public string Content { set; get; }
+        private static readonly string repositoryPath;
+        private static readonly string enviromentPath;
+        private static readonly string localPath;
+        private static bool isFoundStudent;
 
-        public Filemanager(string content)
+        static Filemanager()
         {
-            Content = content;
+            repositoryPath = ConfigurationManager.AppSettings["localPath"];
+            enviromentPath = Environment.GetEnvironmentVariable("localPath", EnvironmentVariableTarget.User);
+            localPath = !string.IsNullOrWhiteSpace(enviromentPath) ? enviromentPath : repositoryPath;
         }
 
-        public void AddContent(string content)
+        public static Student ReadContent(Student s)
         {
-            File.AppendAllText(Path, content);
-        }
-
-        public void OnCreate()
-        {
-            FileStream fs = File.Open(Path, FileMode.Create);
-            fs.Close();
-        }
-
-        public void OnExist()
-        {
-            FileStream fs;
+            Student student = s;
+            string line;
+            string[] rows;
+            isFoundStudent = false;
             try
             {
-               fs = File.Open(Path, FileMode.Open);
-               fs.Close();
-            }
-            catch(FileNotFoundException fnfe)
-            {
-                //The File don't exist, the we will create it.
-                System.Diagnostics.Debug.WriteLine(fnfe.Message);
-                OnCreate();
-            }
-           
-           
 
+                using (StreamReader sr = File.OpenText(localPath))
+                {
+                
+                    do
+                    {
+                        line = sr.ReadLine();
+
+
+                        if (line!=null)
+                        {
+                           
+                            rows = line.Split(",".ToCharArray());
+
+                      
+
+                            if (student.StudenId.Equals(int.Parse(rows.GetValue(1).ToString())))
+                            {
+
+                                student.GuidId = Guid.Parse(rows.GetValue(0).ToString());
+                                student.StudenId = int.Parse(rows.GetValue(1).ToString());
+                                student.Name = rows.GetValue(2).ToString();
+                                student.Surname = rows.GetValue(3).ToString();
+                                student.Birthday = rows.GetValue(4).ToString();
+                                
+                            }
+                        }
+
+
+                    } while (!sr.EndOfStream);
+                    
+                }
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (ArgumentNullException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (ArgumentException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (PathTooLongException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (FileNotFoundException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (NotSupportedException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            
+
+            return student;
         }
 
+        public static Student AddContent(Student student)
+        {
+            try
+            {
+                using (StreamWriter sw = File.AppendText(localPath))
+                {
+                    sw.WriteLine(student.ToString());
 
+                }
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (ArgumentNullException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (ArgumentException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (PathTooLongException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            catch (NotSupportedException e)
+            {
+                System.Console.WriteLine(e.Message);
+            }
+            return student;
+
+        }
     }
 }

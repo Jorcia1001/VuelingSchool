@@ -1,23 +1,45 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using VuelingSchool.Common.Library.Models;
-using VuelingSchool.DataAccess.Repository;
 
 namespace VuelingSchool.DataAccess.Repository.Tests
 {
     [TestClass()]
     public class StudentRepositoryTests
     {
-        IStudentRepository iStudentRepository = new StudentRepository();
-         
-        [DataTestMethod]
-        public void AddStudentTest(Student entrada, Student salida)
-        {
-            Guid guidId = Guid.NewGuid();
-            entrada = new Student("1", "Jhon", "Perez","01/02/1995",guidId);
-            salida = new Student("1", "Jhon", "Perez", "01/02/1995", guidId);
+        readonly IStudentRepository iStudentRepository = new StudentRepository();
 
-            Assert.IsTrue(iStudentRepository.AddStudent(entrada) == salida);
+        [DataRow(48077877, "Jordy", "Garcia Intriago", "20/03/1995")]
+        [DataTestMethod]
+        public void AddStudentRepository(int studentId, string name, string surname, string birthday)
+        {
+          
+            Student entrada = new Student(studentId, name, surname, birthday);
+            Student salida = iStudentRepository.AddStudent(entrada);
+
+            Assert.AreEqual(entrada, salida);
+        }
+
+        [DataRow(1,1)]
+        [DataTestMethod]
+        public void ReadStudentByIdRepository(int studentIdIn,int studentIdOut)
+        {
+
+            Student entrada = new Student
+            {
+                StudenId = studentIdIn
+            };
+
+            Student salida = new Student
+            {
+                StudenId = studentIdOut
+            };
+            
+            
+            System.Console.WriteLine("Entrada: "+entrada.ToString());
+            System.Console.WriteLine("Salida:  "+salida.ToString());
+
+            Assert.AreEqual(entrada, salida);
         }
     }
 }
