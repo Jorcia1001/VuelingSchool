@@ -7,9 +7,13 @@ namespace VuelingSchool.DataAccess.Repository
     {
         Student AddStudent(Student s);
 
-        Student ReadAllStudents(Student s);
+        void ShowAllStudents();
 
-        Student ReadStudentById(Student s);
+        Student FoundStudentById(Student s);
+
+        void UpdateStudentById(Student s);
+
+        void DeleteStudentById(Student s);
 
     }
 }
