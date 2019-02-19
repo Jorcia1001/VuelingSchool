@@ -102,7 +102,7 @@ namespace VuelingSchool.Presentation.Console
             System.Console.Write("Birthday   : ");
             student.Birthday = System.Console.ReadLine();
 
-            if (studentRepository.isExistData())
+            if (studentRepository.IsExistData())
             {
                 if (studentRepository.FoundStudentById(student).StudenId != student.StudenId)
                 {
@@ -128,7 +128,7 @@ namespace VuelingSchool.Presentation.Console
         {
 
             s = new StudentRepository();
-            if (s.isExistData())
+            if (s.IsExistData())
             {
                 HeaderData();
                 s.ShowAllStudents();
@@ -176,7 +176,7 @@ namespace VuelingSchool.Presentation.Console
             studentRepository = new StudentRepository();
             string number = null;
             bool isFound = false;
-            if (!studentRepository.isExistData())
+            if (!studentRepository.IsExistData())
             {
                 System.Console.WriteLine("Don't exist data!!");
                 return isFound;

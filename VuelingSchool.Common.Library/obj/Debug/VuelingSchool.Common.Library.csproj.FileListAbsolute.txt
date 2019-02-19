@@ -3,3 +3,4 @@ C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Common.Library\bin\Debug
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Common.Library\obj\Debug\VuelingSchool.Common.Library.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Common.Library\obj\Debug\VuelingSchool.Common.Library.dll
 C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Common.Library\obj\Debug\VuelingSchool.Common.Library.pdb
+C:\Users\admin\source\repos\VuelingSchool\VuelingSchool.Common.Library\obj\Debug\VuelingSchool.Common.Library.csprojAssemblyReference.cache

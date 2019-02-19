@@ -6,8 +6,16 @@ namespace VuelingSchool.DataAccess.Repository
 {
     public class StudentRepository : IStudentRepository
     {
+        protected string tipo;
+        public StudentRepository()
+        {
 
-        public  bool isExistData()
+        }
+        public StudentRepository(string t)
+        {
+            this.tipo = t;
+        }
+        public  bool IsExistData()
         {
             return Filemanager.IsExist();
         }
@@ -59,6 +67,22 @@ namespace VuelingSchool.DataAccess.Repository
                 }
             
 
+        }
+
+        public FileRespositoryAbstractFactory CreateFile()
+        {
+            if (tipo.Equals("XML"))
+            {
+                return new XmlFileRepository();
+            }
+            else if (tipo.Equals("Json"))
+            {
+                return new XmlFileRepository();
+            }
+            else
+            {
+                return new TxtFileRepository();
+            }
         }
     }
 }
