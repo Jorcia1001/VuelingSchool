@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace VuelingSchool.DataAccess.Repository
 {
-    class JsonFileRespository : FileRespositoryAbstractFactory
+    public abstract class AbstractFactory
     {
-        public override string Description()
-        {
-            return  "Creando Json";
-        }
+        public abstract AbstractRespository CreateNewRepository();
     }
 }

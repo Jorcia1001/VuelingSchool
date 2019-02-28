@@ -1,12 +1,14 @@
 ﻿using VuelingSchool.Common.Library.Models;
 using VuelingSchool.DataAccess.Repository;
+using System;
 
 namespace VuelingSchool.Presentation.Console
 {
     class HeaderProgram
     {
         static Student student;
-        static StudentRepository studentRepository;
+        static Factory Factory;
+        static StudentRespository studentRespository;
         static string opc;
         static bool isNumber;
         static int studentIdStatic;
@@ -28,35 +30,36 @@ namespace VuelingSchool.Presentation.Console
                 switch (opc)
                 {
                     case "1":
+                        Factory myFactory = new Factory();
+                        AbstractRespository myAbstractRespository = myFactory.CreateNewRepository();
 
-                        AddNewStudnet(student, studentRepository);
                         break;
                     case "2":
 
-                        ReadAllStudents(studentRepository);
+                        ReadAllStudents(studentRespository);
                         System.Console.ReadKey();
                         break;
                     case "3":
 
-                        if (SearchStudentById(student, studentRepository))
+                        if (SearchStudentById(student, studentRespository))
                         {
                             System.Console.WriteLine("Into data wich you want to update");
-                            EditStudentById(student, studentRepository);
+                            EditStudentById(student, studentRespository);
 
                         }
                         System.Console.ReadKey();
 
                         break;
                     case "4":
-                        if (SearchStudentById(student, studentRepository))
+                        if (SearchStudentById(student, studentRespository))
                         {
-                            
-                            DeleteStudentById(student, studentRepository);
+
+                            DeleteStudentById(student, studentRespository);
                             System.Console.WriteLine("Student Delete!!");
                             System.Console.ReadKey();
 
                         }
-                        
+
                         break;
 
                     default:
@@ -87,9 +90,9 @@ namespace VuelingSchool.Presentation.Console
                 "GuidId", "StudenId", "Name", "Surname", "Birthday"));
         }
 
-        public static void AddNewStudnet(Student student, StudentRepository studentRepository)
+        public static void AddNewStudnet(Student student, StudentRespository studentRepository)
         {
-            studentRepository = new StudentRepository();
+            studentRepository = new StudentRespository();
             student = new Student();
 
 
@@ -100,7 +103,7 @@ namespace VuelingSchool.Presentation.Console
             System.Console.Write("Surname    : ");
             student.Surname = System.Console.ReadLine();
             System.Console.Write("Birthday   : ");
-            student.Birthday = System.Console.ReadLine();
+            student.Birthday = DateTime.Parse(System.Console.ReadLine()).Date;
 
             if (studentRepository.IsExistData())
             {
@@ -142,7 +145,7 @@ namespace VuelingSchool.Presentation.Console
         public static void EditStudentById(Student student, StudentRepository studentRepository)
         {
             student = new Student();
-            studentRepository = new StudentRepository();
+            studentRepository = new StudentRespository();
             student.StudenId = studentIdStatic;
             studentRepository.UpdateStudentById(student);
 
@@ -153,7 +156,7 @@ namespace VuelingSchool.Presentation.Console
             System.Console.Write("Surname    : ");
             student.Surname = System.Console.ReadLine();
             System.Console.Write("Birthday   : ");
-            student.Birthday = System.Console.ReadLine();
+            student.Birthday = DateTime.Parse(System.Console.ReadLine()).Date;
             studentRepository.AddStudent(student);
             System.Console.WriteLine("Student Update!!");
 
@@ -161,19 +164,19 @@ namespace VuelingSchool.Presentation.Console
 
         }
 
-        public static void DeleteStudentById(Student student, StudentRepository studentRepository)
+        public static void DeleteStudentById(Student student, StudentRespository studentRepository)
         {
             student = new Student();
-            studentRepository = new StudentRepository();
+            studentRepository = new StudentRespository();
             student.StudenId = studentIdStatic;
             studentRepository.DeleteStudentById(student);
 
 
         }
-        public static bool SearchStudentById(Student student, StudentRepository studentRepository)
+        public static bool SearchStudentById(Student student, StudentRespository studentRepository)
         {
             student = new Student();
-            studentRepository = new StudentRepository();
+            studentRepository = new StudentRespository();
             string number = null;
             bool isFound = false;
             if (!studentRepository.IsExistData())

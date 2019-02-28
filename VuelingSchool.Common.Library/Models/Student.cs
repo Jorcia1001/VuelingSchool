@@ -9,7 +9,7 @@ namespace VuelingSchool.Common.Library.Models
         public int StudenId { set; get; }
         public string Name { set; get; }
         public string Surname { set; get; }
-        public string Birthday { set; get; }
+        public DateTime Birthday { set; get; }
         public Guid GuidId { set; get; }
 
         public Student()
@@ -17,7 +17,7 @@ namespace VuelingSchool.Common.Library.Models
            
         }
 
-        public Student(int studenId, string name, string surname, string birthday)
+        public Student(int studenId, string name, string surname, DateTime birthday)
         {
 
             this.GuidId = Guid.NewGuid();
@@ -40,20 +40,11 @@ namespace VuelingSchool.Common.Library.Models
                    GuidId.Equals(student.GuidId);
         }
 
-         public override int GetHashCode()
-        {
-            var hashCode = 1981116738;
-            hashCode = hashCode * -1521134295 + StudenId.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Surname);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Birthday);
-            hashCode = hashCode * -1521134295 + EqualityComparer<Guid>.Default.GetHashCode(GuidId);
-            return hashCode;
-        }
+        
         public override string ToString()
         {
             return String.Format("{0,38},{1,10},{2,-15},{3,-20},{4,-10}",
-                this.GuidId, this.StudenId, this.Name, this.Surname, this.Birthday);
+                this.GuidId, this.StudenId, this.Name, this.Surname, this.Birthday.Date);
         }
 
       

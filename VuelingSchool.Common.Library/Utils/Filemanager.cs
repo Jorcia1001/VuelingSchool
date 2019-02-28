@@ -14,8 +14,8 @@ namespace VuelingSchool.Common.Library.Utils
 
         static Filemanager()
         {
-            repositoryPath = ConfigurationManager.AppSettings["localPath"];
-            enviromentPath = Environment.GetEnvironmentVariable("localPath", EnvironmentVariableTarget.User);
+            repositoryPath = ConfigurationManager.AppSettings["localPathXML"];
+            enviromentPath = Environment.GetEnvironmentVariable("localPathXML", EnvironmentVariableTarget.User);
             localPath = !string.IsNullOrWhiteSpace(enviromentPath) ? enviromentPath : repositoryPath;
         }
 
@@ -40,7 +40,7 @@ namespace VuelingSchool.Common.Library.Utils
                             if (student.StudenId.Equals(int.Parse(rows.GetValue(1).ToString())))
                             {
                                 indexOfLine = nLines;
-                              
+
                             }
                         }
                         nLines++;
@@ -101,7 +101,7 @@ namespace VuelingSchool.Common.Library.Utils
                                 student.StudenId = int.Parse(rows.GetValue(1).ToString());
                                 student.Name = rows.GetValue(2).ToString();
                                 student.Surname = rows.GetValue(3).ToString();
-                                student.Birthday = rows.GetValue(4).ToString();
+                                student.Birthday = DateTime.Parse(rows.GetValue(4).ToString());
                             }
                         }
 
