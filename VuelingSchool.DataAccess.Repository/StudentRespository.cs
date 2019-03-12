@@ -10,7 +10,7 @@ namespace VuelingSchool.DataAccess.Repository
     public class StudentRespository
     {
         public static  Factory myFactory = new Factory();
-        public AbstractRespository myAbstractRespository = myFactory.CreateNewRepository();
+        public static AbstractRespository myAbstractRespository = myFactory.CreateNewRepository();
 
 
         public StudentRespository(AbstractRespository myAbstractRespository)
